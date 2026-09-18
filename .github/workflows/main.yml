@@ -16,7 +16,9 @@ jobs:
 
       - name: Extract project ZIP
         run: |
-          unzip -o LogeAchi-Phone-Ready-LOGO-Included.zip
+          ZIP_FILE=$(ls *.zip | head -n 1)
+          echo "Extracting $ZIP_FILE"
+          unzip -o "$ZIP_FILE"
 
       - name: Set up Java
         uses: actions/setup-java@v4
